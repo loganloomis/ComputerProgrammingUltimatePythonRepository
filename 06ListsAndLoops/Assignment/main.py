@@ -104,23 +104,62 @@ print(all_the_same([1,2,3]))
 print(all_the_same([5,6,3]))
 
 print("############")
-def increasing(list1):
-    first = list1[0]
-    previous = list1[0]-1
-    last = list1[-1]
-    for num in list1:
-        if num > previous and num > first and num > last:
-            return True
-    else:
-        return False
+def increasing(nums):
+    previous = nums[0]-1
+    for num in nums:
+        if num <= previous:
+            return False
+        previous = num
+    return True
     
-print(increasing([1,2,2]))
+print(increasing([5,5,6,7]))
 print(increasing([3,2,1]))
 print(increasing([1,2,3,4,5]))
   
-
-#def is_incrementing():
+print("############")
+def is_incrementing(nums):
+        previous = nums[0]-1
+        for num in nums:
+            if num != previous + 1:
+                return False
+            previous = num
+        return True
     
+print(is_incrementing([5,5,6,7]))
+print(is_incrementing([3,2,1]))
+print(is_incrementing([1,2,3,4,5]))
+
+print("#############")
+def has_adjacent_repeat(nums):
+        previous = nums[0]-1
+        for num in nums:
+            if num == previous:
+                return True
+            previous = num
+        return False    
+print(has_adjacent_repeat([5,5,6,7]))
+print(has_adjacent_repeat([3,3,1]))
+print(has_adjacent_repeat([1,2,3,4,5]))
+print("###############")
+
+def sum_with_skips(nums):
+    total = 0
+    ignoring = False
+    for num in nums:
+        if ignoring == True:
+            if num == -1:
+                ignoring = False
+        elif ignoring == False:
+            if num == -1:
+                ignoring = True
+            else:
+                total = total + num
+        
+    return total
+print(sum_with_skips([1,-1,2,-1,3]))
+print(sum_with_skips([-1,1,2,3,-1]))
+print(sum_with_skips([5,5,6,7]))
+print(sum_with_skips([5,-1,-1,7]))
 
 
 
