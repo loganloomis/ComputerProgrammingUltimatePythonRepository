@@ -117,7 +117,8 @@ print(increasing([3,2,1]))
 print(increasing([1,2,3,4,5]))
   
 
-#def is_incrementing():
+def is_incrementing():
+    pass
 
 
 
