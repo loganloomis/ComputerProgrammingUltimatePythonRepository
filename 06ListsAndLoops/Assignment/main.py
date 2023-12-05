@@ -106,10 +106,12 @@ print(all_the_same([5,6,3]))
 print("############")
 def increasing(list1):
     first = list1[0]
-    previous = list[0]-1
+    previous = list1[0]-1
+    last = list1[-1]
     for num in list1:
-        if previous > first:
+        if num > previous and num > first and num > last:
             return True
+    else:
         return False
     
 print(increasing([1,2,2]))
@@ -117,8 +119,8 @@ print(increasing([3,2,1]))
 print(increasing([1,2,3,4,5]))
   
 
-def is_incrementing():
-    pass
+#def is_incrementing():
+    
 
 
 
