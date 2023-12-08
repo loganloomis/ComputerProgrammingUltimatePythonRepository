@@ -98,8 +98,8 @@ def to_camel_case(word):
           result = result + letter  
         nextupper = True
     if result == " ":
-        result = result + letter.upper()
-        nextupper = False
+            result = result + letter.upper()
+            nextupper = True
     return result
 
 print(to_camel_case("hello world"))
@@ -123,8 +123,18 @@ def to_snake_case(word):
 print(to_snake_case("hello world"))
 print(to_snake_case("to camel case"))
 print(to_snake_case("another test case"))
+print("###############")
+def without_duplicates(string):
+    result = ""
+    previous = string[0] - 1
+    for numbers in string:
+        if numbers == previous:
+            result = result - numbers
+    return result
+print(without_duplicates([1, 2, 3, 3, 1]))
+print(without_duplicates([4, 4, 5, 5, 6, 6]))
+print(without_duplicates([7, 7, 8, 8, 9, 9]))
 
-    
 
 
 
